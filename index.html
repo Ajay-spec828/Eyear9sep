@@ -1,0 +1,70 @@
+<html>
+    <head>
+         <title></title>
+         <style>
+               *{font-size:40px; font-family:calibri;}
+                 body{background-color:aqua};
+         </style>
+      </head>
+    <body>
+           <center>
+                <h1>Engineering Year</h1>
+                 <form onsubmit="show()">
+                 <label>Name</label>
+                 <input type="text" id="name"  placeholder="please enter your name"/>
+                 <br/><br/>
+                 <label>Select Engg Year </label>
+                 <select id="year">
+                       <option value="fe">FE</option>
+                       <option value="se">SE</option>
+                       <option value="te">TE</option>
+                       <option value="be">BE</option>
+                 </select>
+                  <br/><br/>
+                 <input type="submit"/>
+               </form>
+               <h2 id="msg"/>
+              <script>
+                    function show()
+                   {
+                       event.preventDefault();
+                       let name= document.getElementById("name");
+                       let year= document.getElementById("year");
+                       let msg= document.getElementById("msg");
+               
+                     let n= name.value;
+                     let y=year.value;
+                   
+
+
+                       if (n.trim()==="")
+                        {
+                             alert("please enter your name");
+                              msg.innerHTML="";
+                             name.focus();
+                             return;
+
+
+                           }
+                           if (!n.match("^[a-z A-Z]+$"))
+                        {
+                             alert("please enter your name");
+                              msg.innerHTML="";
+                             name.focus();
+                             return;
+
+
+                           }
+
+               
+                          let a = "name="+ n + " year = " + y;
+                          msg.innerHTML= a;
+ 
+                   }
+
+
+             </script>
+                   
+       </center>
+   </body>
+</html>   
